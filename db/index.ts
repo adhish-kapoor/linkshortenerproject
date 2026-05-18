@@ -5,4 +5,4 @@ if (!databaseUrl) {
   throw new Error('DATABASE_URL environment variable is required');
 }
 
-const db = drizzle(databaseUrl);
+export const db = drizzle(databaseUrl);

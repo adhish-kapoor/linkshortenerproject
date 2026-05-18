@@ -1,3 +1,6 @@
+---
+description: Read this file for all authentication standards and requirements for the Link Shortener application. This document defines how to implement authentication using Clerk, including protected routes, API route protection, and best practices.
+---
 # Authentication Documentation
 
 This document defines all authentication standards and requirements for the Link Shortener application. All authentication must be handled exclusively through **Clerk** — no other auth methods are permitted.

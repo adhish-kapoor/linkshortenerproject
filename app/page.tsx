@@ -19,7 +19,7 @@ export default async function Home() {
   }
 
   return (
-    <div className="flex flex-col min-h-screen">
+      <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
       <section className="flex-1 flex items-center justify-center px-4 py-20 sm:py-32">
         <div className="max-w-3xl mx-auto text-center space-y-8">
@@ -167,6 +167,6 @@ export default async function Home() {
           </div>
         </div>
       </section>
-    </div>
+      </div>
   );
 }

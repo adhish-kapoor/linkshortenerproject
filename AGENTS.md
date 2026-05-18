@@ -38,13 +38,6 @@ npm run lint       # Run ESLint
 
 ## Critical Rules
 
-### 0. **ALWAYS Read Documentation First**
-- **Before writing ANY code**, read the relevant `.md` file in the `/docs` directory
-- Read [docs/authentication.md](docs/authentication.md) before implementing authentication features
-- Read [docs/shadcn-ui.md](docs/shadcn-ui.md) before using UI components
-- This is non-negotiable — documentation defines standards and patterns
-- Failure to follow this will result in code that doesn't meet project standards
-
 ### 1. **TypeScript Strict Mode**
 - All code must compile with `strict: true`
 - No `any` types (use `unknown` when appropriate)
@@ -79,48 +72,6 @@ npm run lint       # Run ESLint
 - Always use try/catch for async operations
 - Return appropriate HTTP status codes
 - Never expose sensitive information in error messages
-
----
-
-## Detailed Guides
-
-**⚠️ MANDATORY: READ DOCUMENTATION BEFORE WRITING CODE ⚠️**
-
-Each aspect of development has detailed documentation in the `/docs` directory. **You MUST read the relevant guide BEFORE implementing any features.** This is non-negotiable and critical to code quality.
-
-**ALWAYS refer to the relevant .md file BEFORE generating any code:**
-
-- **[Authentication (docs/authentication.md)](docs/authentication.md)** — Clerk setup, protected routes, user authentication flows, sign-in/sign-up modals, and authorization patterns
-- **[shadcn/ui Components (docs/shadcn-ui.md)](docs/shadcn-ui.md)** — Component standards, installation, usage patterns, icons with Lucide React, and forbidden practices
-
-If the documentation isn't followed, code will be rejected and require rewrites. Always prioritize reading docs over making assumptions.
-
----
-
-## Development Workflow
-
-### 1. **Planning**
-- **CRITICAL: Read the relevant documentation in `/docs` FIRST** — before any planning or coding
-- Understand the feature requirements
-- Plan file structure and component hierarchy
-- Review existing code patterns in the codebase
-
-### 2. **Implementation**
-- Create components/modules following the standards
-- Write TypeScript with strict types
-- Use Tailwind CSS for styling
-- Handle errors appropriately
-
-### 3. **Testing**
-- Test TypeScript compilation: `npm run build`
-- Lint code: `npm run lint`
-- Test in browser (dev server: `npm run dev`)
-- Test on mobile viewport
-
-### 4. **Git Workflow**
-- Create feature branch: `git checkout -b feature/description`
-- Commit regularly with conventional commit messages
-- Push branch and create Pull Request
 
 ---
 
@@ -266,20 +217,11 @@ This project uses **Next.js 16.2.4** which has breaking changes from earlier ver
 - **No `pages/` directory**: Use `app/` instead
 - **Automatic trailing slashes**: Configure in `next.config.ts` if needed
 - **Image Optimization**: Use `next/image` Image component
+- **Middleware**: `middleware.ts` is deprecated in later versions of Next.js. Use `proxy.ts` instead for request interception and routing logic.
 
 Always check the Next.js docs in `node_modules/next/dist/docs/` for API details.
 
 ---
-
-## Questions or Clarifications?
-
-When in doubt:
-1. **ALWAYS check the relevant guide in `docs/` FIRST** — documentation has the answers
-2. Review similar existing code in the codebase
-3. Test TypeScript compilation: `npm run build`
-4. Lint to catch errors: `npm run lint`
-
-**Remember**: Reading the `/docs` directory files BEFORE writing code is non-negotiable. This is the single most important rule for maintaining code quality and consistency.
 
 ---
 

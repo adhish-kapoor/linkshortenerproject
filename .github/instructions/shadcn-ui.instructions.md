@@ -1,3 +1,7 @@
+---
+description: Read this file for all UI component standards and requirements for the Link Shortener application. This document defines how to use shadcn/ui components, including installation, usage guidelines, best practices, and troubleshooting tips.
+---
+
 # shadcn/ui Component Standards
 
 This document defines how to use shadcn/ui components in the Link Shortener application. **All UI elements must use shadcn/ui components**. No custom components should be created.

@@ -25,7 +25,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider>
+    <ClerkProvider
+      appearance={{
+        theme: "shadcn",
+      }}
+        signInFallbackRedirectUrl="/dashboard"
+        signUpFallbackRedirectUrl="/dashboard"
+        >
+
       <html
         lang="en"
         className={`dark ${geistSans.variable} ${geistMono.variable} h-full antialiased`}
@@ -37,6 +44,9 @@ export default function RootLayout({
               <div className="flex gap-4 items-center">
                 <Show when="signed-out">
                   <SignInButton mode="modal">
+                    <Button variant="outline" size="lg" className="w-full sm:w-auto">
+                      Sign in
+                    </Button>
                   </SignInButton>
                   <SignUpButton mode="modal">
                     <Button variant="default" size="lg" className="w-full sm:w-auto">

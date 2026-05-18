@@ -1,5 +1,7 @@
 import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
+import { getUserLinks } from "@/data/links";
+import { DashboardContent } from "./components/DashboardContent";
 
 export default async function DashboardPage() {
   const { userId } = await auth();
@@ -8,9 +10,7 @@ export default async function DashboardPage() {
     redirect("/");
   }
 
-  return (
-    <div className="space-y-4 p-6">
-      <h2 className="text-2xl font-bold">Dashboard</h2>
-    </div>
-  );
+  const userLinks = await getUserLinks(userId);
+
+  return <DashboardContent userLinks={userLinks} />;
 }
